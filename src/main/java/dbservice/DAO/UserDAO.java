@@ -31,7 +31,7 @@ public class UserDAO {
 //        });
 //    }
 
-    public User getUserById(int userId){
+    public User getUserById(int userId) {
         User user = new User();
         try {
             PreparedStatement preparedStatement = connection.
@@ -85,14 +85,16 @@ public class UserDAO {
                 user.setLogin(result.getString("login"));
                 users.add(user);
             }
-        }catch (SQLException e){e.printStackTrace();}
-            return users;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return users;
     }
 
     public void addUser(User user) {
         try {
             PreparedStatement preparedStatement = connection
-                    .prepareStatement("insert into qwert(id,name,pass,login) values (?, ?, ?, ? )");
+                    .prepareStatement("INSERT into qwert(id,name,pass,login) values (?,?,?,?)");
             preparedStatement.setInt(1, user.getId());
             preparedStatement.setString(2, user.getName());
             preparedStatement.setString(3, user.getPass());
@@ -107,7 +109,7 @@ public class UserDAO {
     public void updateUser(User user) {
         try {
             PreparedStatement preparedStatement = connection
-                    .prepareStatement("update qwer set id=?, name=?, pass=?, login=?" +
+                    .prepareStatement("UPDATE qwert set id=?, name=?, pass=?, login=?" +
                             "where id=?");
             preparedStatement.setInt(1, user.getId());
             preparedStatement.setString(2, user.getName());
@@ -115,17 +117,16 @@ public class UserDAO {
             preparedStatement.setString(4, user.getLogin());
             preparedStatement.setInt(5, user.getId());
             preparedStatement.executeUpdate();
-
         } catch (SQLException e) {
             e.printStackTrace();
         }
     }
 
-    public void deleteUser(int userId) {
+    public void deleteUser(User user) {
         try {
             PreparedStatement preparedStatement = connection
-                    .prepareStatement("delete from qwert where id=?");
-            preparedStatement.setInt(1, userId);
+                    .prepareStatement("DELETE from qwert where id=?");
+            preparedStatement.setInt(1, user.getId());
             preparedStatement.executeUpdate();
 
         } catch (SQLException e) {

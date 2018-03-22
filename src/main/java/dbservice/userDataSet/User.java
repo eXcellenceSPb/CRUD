@@ -1,13 +1,24 @@
 package dbservice.userDataSet;
 
-import java.util.Objects;
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import java.io.Serializable;
 
-public class User {
+@SuppressWarnings("deprecation")
+@Entity
+@Table(name = "qwert")
+public class User implements Serializable{
     private String pkey;
-
+    @Id
+    @Column(name="id")
     private int id;
+    @Column(name="name")
     private String name;
+    @Column(name="pass")
     private String pass;
+    @Column(name="login")
     private String login;
 
     public void setId(int id) {
@@ -31,7 +42,6 @@ public class User {
         this.name = null;
         this.pass = null;
         this.login = null;
-
     }
 
     public User(int id, String name, String pass, String login) {
@@ -56,6 +66,7 @@ public class User {
     public String getLogin() {
         return login;
     }
+
     @Override
     public String toString() {
         return "User{" +
@@ -64,12 +75,6 @@ public class User {
                 ", pass='" + pass + '\'' +
                 ", login='" + login + '\'' +
                 '}';
-    }
-
-    @Override
-    public int hashCode() {
-
-        return Objects.hash(id, name, login, pass);
     }
 
     public String getPkey() {

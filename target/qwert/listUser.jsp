@@ -30,8 +30,8 @@
             <td><c:out value="${qwert.name}"/></td>
             <td><c:out value="${qwert.pass}"/></td>
             <td><c:out value="${qwert.login}"/></td>
-            <td><a href="TestServlet?action=edit&userId=${qwert.id}">Update</a></td>
-            <td><a href="TestServlet?action=delete&userId=${qwert.id}">Delete</a></td>
+            <td><a href="TestServlet?action=edit&id=${qwert.id}">Update</a></td>
+            <td><a href="TestServlet?action=delete&id=${qwert.id}">Delete</a></td>
         </tr>
     </c:forEach>
     </tbody>

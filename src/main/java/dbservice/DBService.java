@@ -51,8 +51,8 @@ public class DBService {
                     append("localhost:").
                     append("3306/").
                     append("qwert?").
-                    append("user=root");
-                   // append("password=");
+                    append("user=root&").
+                    append("password=");
             System.out.println("URL: " + url + "\n");
             Connection connection = DriverManager.getConnection(url.toString());
             return connection;

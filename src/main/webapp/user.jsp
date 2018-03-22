@@ -19,20 +19,25 @@
 <body>
 
 <form method="POST" action='TestServlet' name="frmAddUser">
+    Id : <input
+        type="text" name="id"
+        value=
+        <c:out value="${qwert.id}" />> <br/>
     Name : <input
         type="text" name="name"
         value=
-        <c:out value="${qwert.name}"/> <br/>
+        <c:out value="${qwert.name}" />> <br/>
     Pass : <input
         type="text" name="pass"
         value=
-        <c:out value="${qwert.pass}"/>/> <br/>
+        <c:out value="${qwert.pass}" />> <br/>
     Login : <input
         type="text" name="login"
         value=
-        <c:out value="${qwert.login}"/>/> <br/>
+        <c:out value="${qwert.login}" />> <br/>
     <input
             type="submit" value="Submit"/>
 </form>
+
 </body>
 </html>

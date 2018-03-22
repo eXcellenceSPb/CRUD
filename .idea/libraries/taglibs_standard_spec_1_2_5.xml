@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="taglibs-standard-spec-1.2.5">
+    <CLASSES />
+    <JAVADOC />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/src/main/java" />
+    </SOURCES>
+  </library>
+</component>
