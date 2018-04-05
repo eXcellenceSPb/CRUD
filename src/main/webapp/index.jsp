@@ -3,11 +3,10 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Insert title here</title>
+    <title>Title</title>
 </head>
 <body>
-<!--jsp:forward page="TestServlet?action=listUser"/>-->
-<a href="TestServlet">Click here to see servlet</a>
-<jsp:forward page="/TestServlet?action=listUser" />
+<a href="ReadServlet">Click here to see servlet</a>
+<jsp:forward page="/Read" />
 </body>
 </html>

@@ -1,0 +1,15 @@
+0:0:0:0:0:0:0:1 - - [03/Apr/2018:22:37:33 +0300] "GET / HTTP/1.1" 500 17066 http-bio-8888-exec-1 1013
+0:0:0:0:0:0:0:1 - - [03/Apr/2018:22:38:55 +0300] "GET / HTTP/1.1" 500 3936 http-bio-8888-exec-1 2371
+0:0:0:0:0:0:0:1 - - [03/Apr/2018:22:42:27 +0300] "GET / HTTP/1.1" 200 1056 http-bio-8888-exec-1 2085
+0:0:0:0:0:0:0:1 - - [03/Apr/2018:22:42:31 +0300] "GET /Create?action=insert HTTP/1.1" 302 - http-bio-8888-exec-2 2
+0:0:0:0:0:0:0:1 - - [03/Apr/2018:22:42:31 +0300] "GET /user.jsp HTTP/1.1" 200 811 http-bio-8888-exec-3 8
+0:0:0:0:0:0:0:1 - - [03/Apr/2018:22:42:31 +0300] "GET /css/ui-lightness/jquery-ui-1.8.18.custom.css HTTP/1.1" 404 1039 http-bio-8888-exec-4 6
+0:0:0:0:0:0:0:1 - - [03/Apr/2018:22:42:31 +0300] "GET /js/jquery-1.7.1.min.js HTTP/1.1" 404 995 http-bio-8888-exec-5 2
+0:0:0:0:0:0:0:1 - - [03/Apr/2018:22:42:31 +0300] "GET /js/jquery-ui-1.8.18.custom.min.js HTTP/1.1" 404 1017 http-bio-8888-exec-6 3
+0:0:0:0:0:0:0:1 - - [03/Apr/2018:22:42:37 +0300] "POST /Create HTTP/1.1" 200 1329 http-bio-8888-exec-9 59
+0:0:0:0:0:0:0:1 - - [03/Apr/2018:22:42:39 +0300] "GET /Update?action=edit&id=23 HTTP/1.1" 200 877 http-bio-8888-exec-10 39
+0:0:0:0:0:0:0:1 - - [03/Apr/2018:22:42:39 +0300] "GET /css/ui-lightness/jquery-ui-1.8.18.custom.css HTTP/1.1" 404 1039 http-bio-8888-exec-10 1
+0:0:0:0:0:0:0:1 - - [03/Apr/2018:22:42:39 +0300] "GET /js/jquery-1.7.1.min.js HTTP/1.1" 404 995 http-bio-8888-exec-8 1
+0:0:0:0:0:0:0:1 - - [03/Apr/2018:22:42:39 +0300] "GET /js/jquery-ui-1.8.18.custom.min.js HTTP/1.1" 404 1017 http-bio-8888-exec-7 1
+0:0:0:0:0:0:0:1 - - [03/Apr/2018:22:42:42 +0300] "POST /Update HTTP/1.1" 200 1330 http-bio-8888-exec-7 13
+0:0:0:0:0:0:0:1 - - [03/Apr/2018:22:42:44 +0300] "GET /Delete?action=delete&id=23 HTTP/1.1" 200 1056 http-bio-8888-exec-7 25

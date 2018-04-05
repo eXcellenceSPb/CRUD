@@ -13,7 +13,7 @@
     <title>Show All Users</title>
 </head>
 <body>
-<table border=1>
+<table border=1 align="center">
     <thead>
     <tr>
         <th>User Id</th>
@@ -30,12 +30,12 @@
             <td><c:out value="${qwert.name}"/></td>
             <td><c:out value="${qwert.pass}"/></td>
             <td><c:out value="${qwert.login}"/></td>
-            <td><a href="TestServlet?action=edit&id=${qwert.id}">Update</a></td>
-            <td><a href="TestServlet?action=delete&id=${qwert.id}">Delete</a></td>
+            <td><a href="Update?action=edit&id=${qwert.id}">Update</a></td>
+            <td><a href="Delete?action=delete&id=${qwert.id}">Delete</a></td>
         </tr>
     </c:forEach>
     </tbody>
 </table>
-<p><a href="TestServlet?action=insert">Add User</a></p>
+<p align="center"><a href="Create?action=insert">Add User</a></p>
 </body>
 </html>
