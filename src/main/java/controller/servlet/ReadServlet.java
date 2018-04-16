@@ -15,7 +15,6 @@ import java.io.IOException;
 public class ReadServlet extends HttpServlet {
 
     private static String LIST = "/listUser.jsp";
-  //  private static String EDIT = "/user.jsp";
 
     private UserService userService = new UserServiceImpl();
 
@@ -27,13 +26,11 @@ public class ReadServlet extends HttpServlet {
 
         RequestDispatcher view = request.getRequestDispatcher(LIST);
         view.forward(request, response);
-        //response.sendRedirect(LIST);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
-        //request.getRequestDispatcher(LIST);
         response.sendRedirect(LIST);
     }
 }

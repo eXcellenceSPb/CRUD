@@ -3,11 +3,14 @@ package service;
 import model.User;
 
 import java.util.List;
+import java.util.Map;
 
 public interface UserService {
-    public User getUserById(int userId);
-    public List<User> getAll();
-    public void addUser(User user);
-    public void updateUser(User user);
-    public void deleteUser(User user);
+    User getUserById(int userId);
+    List<User> getAll();
+    void addUser(User user);
+    void updateUser(User user);
+    void deleteUser(User user);
+    User getUserByLogin(String login);
+
 }

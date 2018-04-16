@@ -14,13 +14,12 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/Update")
 public class UpdateServlet extends HttpServlet {
-  //  private static String LIST = "/listUser.jsp";
     private static String EDIT = "/Update.jsp";
 
     private UserService userService = new UserServiceImpl();
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response){
         response.setContentType("text/html");
 
         int id = Integer.parseInt(request.getParameter("id"));
@@ -29,27 +28,28 @@ public class UpdateServlet extends HttpServlet {
         request.setAttribute("qwert", user);
 
         RequestDispatcher view = request.getRequestDispatcher(EDIT);
-        view.forward(request, response);
+        try {
+            view.forward(request, response);
+        } catch (IOException | ServletException e) {
+            e.printStackTrace();
+        }
 
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
         User user = new User();
         user.setName(request.getParameter("name"));
         user.setPass(request.getParameter("pass"));
         user.setLogin(request.getParameter("login"));
+        user.setType(request.getParameter("type"));
         String id = request.getParameter("id");
 
         user.setId(Integer.parseInt(id));
         userService.updateUser(user);
 
-        response.sendRedirect("/index.jsp");
-        //RequestDispatcher view = request.getRequestDispatcher(LIST);
+        response.sendRedirect("/listUser.jsp");
         request.setAttribute("qwert", userService.getAll());
-        //view.forward(request, response);
-
-
     }
 }

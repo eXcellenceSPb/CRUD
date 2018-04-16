@@ -8,16 +8,18 @@ import java.io.Serializable;
 
 @Entity
 @Table(name = "qwert")
-public class User implements Serializable{
+public class User implements Serializable {
     @Id
-    @Column(name="id")
+    @Column(name = "id")
     private int id;
-    @Column(name="name")
+    @Column(name = "name")
     private String name;
-    @Column(name="pass")
+    @Column(name = "pass")
     private String pass;
-    @Column(name="login")
+    @Column(name = "login")
     private String login;
+    @Column(name = "type")
+    private String type;
 
     public void setId(int id) {
         this.id = id;
@@ -35,11 +37,21 @@ public class User implements Serializable{
         this.login = login;
     }
 
-    public User(){
+    public void setType(String type) { this.type = type; }
+
+    public User() {
         this.id = 0;
         this.name = null;
         this.pass = null;
         this.login = null;
+        this.type = null;
+    }
+
+    public User(String login, String pass) {
+        this.login = login;
+        this.pass = pass;
+        this.name = null;
+        this.type = "user";
     }
 
     public User(int id, String name, String pass, String login) {
@@ -47,6 +59,15 @@ public class User implements Serializable{
         this.name = name;
         this.pass = pass;
         this.login = login;
+        this.type = "user";
+    }
+
+    public User(int id,String name, String pass, String login,String type){
+        this.id = id;
+        this.name = name;
+        this.pass = pass;
+        this.login = login;
+        this.type = type;
     }
 
     public int getId() {
@@ -65,6 +86,8 @@ public class User implements Serializable{
         return login;
     }
 
+    public String getType() { return type; }
+
     @Override
     public String toString() {
         return "User{" +
@@ -72,6 +95,7 @@ public class User implements Serializable{
                 ", name='" + name + '\'' +
                 ", pass='" + pass + '\'' +
                 ", login='" + login + '\'' +
+                ", type='" + type + '\'' +
                 '}';
     }
 }

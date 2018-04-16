@@ -17,12 +17,7 @@
     <title>Add new user</title>
 </head>
 <body>
-
-<form method="POST" action='TestServlet' name="frmAddUser">
-    Id : <input
-        type="text" name="id"
-        value=
-        <c:out value="${qwert.id}" />> <br/>
+<form method="POST" action='Create' name="frmAddUser">
     Name : <input
         type="text" name="name"
         value=
@@ -38,6 +33,5 @@
     <input
             type="submit" value="Submit"/>
 </form>
-
 </body>
 </html>
