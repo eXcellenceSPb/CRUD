@@ -1,14 +1,15 @@
 package DAO;
 
 import model.User;
-import org.hibernate.SessionFactory;
 
 import java.util.List;
 
 public interface UserDAO {
-    public User getUserById(int userId);
-    public List<User> getAll();
-    public void addUser(User user);
-    public void updateUser(User user);
-    public void deleteUser(User user);
+    User getUserById(int userId);
+    List<User> getAll();
+    void addUser(User user);
+    void updateUser(User user);
+    void deleteUser(User user);
+    User getUserByLogin(String login);
+
 }

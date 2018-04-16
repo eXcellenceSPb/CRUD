@@ -1,21 +1,18 @@
 package service;
 
 import DAO.UserDAO;
-import DAO.UserDaoImpl;
 import model.User;
+import util.UserDaoFactory;
 
-import java.io.IOException;
 import java.util.List;
+import java.util.Map;
 
-public class UserServiceImpl implements UserService{
-    private UserDAO userDao;
+public class UserServiceImpl implements UserService {
+    private UserDAO userDao = UserDaoFactory.getUserDao();
 
-    {
-        try {
-            userDao = new UserDaoImpl();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+    @Override
+    public User getUserByLogin(String login) {
+        return userDao.getUserByLogin(login);
     }
 
     @Override

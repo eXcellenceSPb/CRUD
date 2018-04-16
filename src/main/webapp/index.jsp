@@ -3,10 +3,24 @@
 <html>
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <title>Title</title>
+    <link type="text/css"
+          href="css/ui-lightness/jquery-ui-1.8.18.custom.css" rel="stylesheet"/>
+    <script type="text/javascript" src="js/jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="js/jquery-ui-1.8.18.custom.min.js"></script>
+    <title>Web App</title>
 </head>
 <body>
-<a href="ReadServlet">Click here to see servlet</a>
-<jsp:forward page="/Read" />
+<a href="SigninServlet">Click here to see servlet</a>
+<jsp:forward page="/signin" />
+
+<%--<form action='signin' method="POST">--%>
+    <%--Login: <input type="text" name="login"/>--%>
+    <%--Password: <input type="password" name="password"/>--%>
+    <%--<input type="submit" value="Sign in">--%>
+<%--</form>--%>
+<%--<br>--%>
+
+<a href="Create?action=insert">Sign Up</a></p>
+
 </body>
 </html>

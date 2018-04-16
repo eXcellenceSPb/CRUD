@@ -35,6 +35,10 @@
         type="text" name="login"
         value=
 <c:out value="${qwert.login}" />> <br/>
+    Type : <input
+        type="text" name="type"
+        value=
+<c:out value="${qwert.type}" />> <br/>
     <input
             type="submit" value="Submit"/>
 </form>

@@ -8,24 +8,21 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 import org.hibernate.query.Query;
 import org.hibernate.service.ServiceRegistry;
-
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 
-import static util.DbUtil.getConfiguration;
 
 
-public class UserDaoImpl implements UserDAO {
+public class UserDaoImpl implements UserDAO{
     private Transaction tx;
     private static SessionFactory sessionFactory;
 
-    public UserDaoImpl() throws IOException {
-        Configuration configuration = getConfiguration();
-        sessionFactory = createSessionFactory(configuration);
+    public UserDaoImpl(SessionFactory sessionFactory) {
+        UserDaoImpl.sessionFactory = sessionFactory;
+        sessionFactory.openSession();
     }
 
-    private static SessionFactory createSessionFactory(Configuration configuration) {
+    public static SessionFactory createSessionFactory(Configuration configuration) {
         StandardServiceRegistryBuilder builder = new StandardServiceRegistryBuilder();
         builder.applySettings(configuration.getProperties());
         ServiceRegistry serviceRegistry = builder.build();
@@ -106,4 +103,33 @@ public class UserDaoImpl implements UserDAO {
             tx.commit();
         }
     }
+
+    public User getUserByLogin(String login) {
+        tx = null;
+        User user = null;
+        try{
+         Session session = sessionFactory.openSession();
+            tx = session.getTransaction();
+            tx.begin();
+            Query query = session.createQuery("FROM User WHERE login='" + login + "'");
+            user = (User) query.uniqueResult();
+            tx.commit();
+        } catch (Exception e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+            e.printStackTrace();
+        }
+        return user;
+    }
+//    public User getUserByLogin(String login){
+//        try {
+//            return (User) sessionFactory.getCurrentSession()
+//                    .createQuery("FROM USER where login='"+login +"'")
+//                    .getSingleResult();
+//        }
+//        catch (Exception e) {
+//            throw new RuntimeException(e);
+//        }
+//    }
 }

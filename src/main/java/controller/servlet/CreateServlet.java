@@ -4,8 +4,6 @@ import model.User;
 import service.UserService;
 import service.UserServiceImpl;
 
-import javax.servlet.RequestDispatcher;
-import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -14,22 +12,18 @@ import java.io.IOException;
 
 @WebServlet(urlPatterns = "/Create")
 public class CreateServlet extends HttpServlet {
-    //private static String LIST = "/listUser.jsp";
     private static String INSERT = "/user.jsp";
     private UserService userService = new UserServiceImpl();
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
-
-//        RequestDispatcher view = request.getRequestDispatcher(INSERT);
-//        view.forward(request, response);
         response.sendRedirect(INSERT);
 
     }
 
     @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws  IOException {
         response.setContentType("text/html");
 
         User user = new User();
@@ -39,10 +33,7 @@ public class CreateServlet extends HttpServlet {
 
         userService.addUser(user);
 
-        response.sendRedirect("/index.jsp");
-        //RequestDispatcher view = request.getRequestDispatcher(LIST);
+        response.sendRedirect("/listUser.jsp");
         request.setAttribute("qwert", userService.getAll());
-        //view.forward(request, response);
-
     }
 }

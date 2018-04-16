@@ -20,6 +20,7 @@
         <th>User Name</th>
         <th>User Pass</th>
         <th>User Login</th>
+        <th>User Type</th>
         <th colspan=2>Action</th>
     </tr>
     </thead>
@@ -30,6 +31,7 @@
             <td><c:out value="${qwert.name}"/></td>
             <td><c:out value="${qwert.pass}"/></td>
             <td><c:out value="${qwert.login}"/></td>
+            <td><c:out value="${qwert.type}"/></td>
             <td><a href="Update?action=edit&id=${qwert.id}">Update</a></td>
             <td><a href="Delete?action=delete&id=${qwert.id}">Delete</a></td>
         </tr>
