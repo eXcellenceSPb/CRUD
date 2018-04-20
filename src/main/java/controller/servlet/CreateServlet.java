@@ -4,6 +4,8 @@ import model.User;
 import service.UserService;
 import service.UserServiceImpl;
 
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
@@ -16,10 +18,9 @@ public class CreateServlet extends HttpServlet {
     private UserService userService = new UserServiceImpl();
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
         response.setContentType("text/html");
         response.sendRedirect(INSERT);
-
     }
 
     @Override
@@ -33,7 +34,7 @@ public class CreateServlet extends HttpServlet {
 
         userService.addUser(user);
 
-        response.sendRedirect("/listUser.jsp");
-        request.setAttribute("qwert", userService.getAll());
+        response.sendRedirect("/index.jsp");
+        //request.setAttribute("qwert", userService.getAll());
     }
 }

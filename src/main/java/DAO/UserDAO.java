@@ -11,5 +11,6 @@ public interface UserDAO {
     void updateUser(User user);
     void deleteUser(User user);
     User getUserByLogin(String login);
+    String getUserRole(String login);
 
 }

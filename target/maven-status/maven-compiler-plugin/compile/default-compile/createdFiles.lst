@@ -1,12 +1,15 @@
 controller/servlet/CreateServlet.class
 controller/servlet/DeleteServlet.class
 controller/servlet/ReadServlet.class
+controller/servlet/Filter/RoleServlet.class
 DAO/UserDaoImpl.class
 DAO/UserDAO.class
 util/DbHelper.class
 controller/servlet/UpdateServlet.class
 util/UserDaoFactory.class
 service/UserServiceImpl.class
+controller/servlet/Filter/FilterServlet.class
+controller/servlet/UserServlet.class
 controller/servlet/Authorization/SignInServlet.class
 model/User.class
 DAO/UserDaoJDBCImpl.class
