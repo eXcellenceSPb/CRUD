@@ -11,14 +11,22 @@
 </head>
 <body>
 
-<form action='signin' method="POST">
-    Login: <input type="text" name="login"/>
-    Password: <input type="password" name="password"/>
-    <input type="submit" value="Sign in">
-</form>
-<br>
+<table align="center">
+            <form action='signin' method="POST">
+                    <tr>
+                        <td align="right">Login:</td><br>
+                        <td><input type="text" name="login"/></td><br>
+                    </tr>
+                    <tr>
+                        <td>Password:</td>
+                        <td><input type="password" name="password"/></td>
+                    </tr>
+                <td align="right"><button type="submit" value="Sign in">Sign in</button></td>
+                <td align="right"><input type="button" value="Sign up" onClick='location.href="Create?action=insert"'></td>
+                <form>
 
-<a href="Create?action=insert">Sign Up</a></p>
-
+                </form>
+            </form>
+</table>
 </body>
 </html>

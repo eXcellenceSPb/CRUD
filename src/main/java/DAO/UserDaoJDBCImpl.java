@@ -116,6 +116,24 @@ public class UserDaoJDBCImpl implements UserDAO{
         return user;
     }
 
+    @Override
+    public String getUserRole(String login) {
+        User user = new User();
+        try {
+            PreparedStatement preparedStatement = connection.
+                    prepareStatement("select * from qwert where login=?");
+            preparedStatement.setString(1, login);
+            ResultSet rs = preparedStatement.executeQuery();
+            if (rs.next()) {
+                user.setType(rs.getString("type"));
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+
+        return user.getType();
+    }
+
 //
 //    public void createTable() throws SQLException {
 //        executor.execUpdate("create table if not exists qwert (id int auto_increment, name varchar(256)," +

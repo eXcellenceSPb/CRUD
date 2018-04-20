@@ -51,7 +51,7 @@ public class User implements Serializable {
         this.login = login;
         this.pass = pass;
         this.name = null;
-        this.type = "user";
+        this.type = null;
     }
 
     public User(int id, String name, String pass, String login) {
@@ -59,7 +59,7 @@ public class User implements Serializable {
         this.name = name;
         this.pass = pass;
         this.login = login;
-        this.type = "user";
+        this.type = null;
     }
 
     public User(int id,String name, String pass, String login,String type){

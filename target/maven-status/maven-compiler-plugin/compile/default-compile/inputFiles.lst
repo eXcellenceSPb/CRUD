@@ -4,10 +4,13 @@
 /home/excellence/IdeaProjects/qwert/src/main/java/DAO/UserDAO.java
 /home/excellence/IdeaProjects/qwert/src/main/java/util/UserDaoFactory.java
 /home/excellence/IdeaProjects/qwert/src/main/java/DAO/UserDaoJDBCImpl.java
+/home/excellence/IdeaProjects/qwert/src/main/java/controller/servlet/Filter/FilterServlet.java
 /home/excellence/IdeaProjects/qwert/src/main/java/controller/servlet/ReadServlet.java
 /home/excellence/IdeaProjects/qwert/src/main/java/controller/servlet/CreateServlet.java
 /home/excellence/IdeaProjects/qwert/src/main/java/controller/servlet/Authorization/SignInServlet.java
 /home/excellence/IdeaProjects/qwert/src/main/java/model/User.java
 /home/excellence/IdeaProjects/qwert/src/main/java/util/DbHelper.java
+/home/excellence/IdeaProjects/qwert/src/main/java/controller/servlet/Filter/RoleServlet.java
 /home/excellence/IdeaProjects/qwert/src/main/java/controller/servlet/UpdateServlet.java
 /home/excellence/IdeaProjects/qwert/src/main/java/controller/servlet/DeleteServlet.java
+/home/excellence/IdeaProjects/qwert/src/main/java/controller/servlet/UserServlet.java

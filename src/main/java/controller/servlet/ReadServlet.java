@@ -2,7 +2,6 @@ package controller.servlet;
 
 import service.UserService;
 import service.UserServiceImpl;
-
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -21,16 +20,16 @@ public class ReadServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html");
+            request.setAttribute("qwert", userService.getAll());
 
-        request.setAttribute("qwert", userService.getAll());
+            RequestDispatcher view = request.getRequestDispatcher(LIST);
+            view.forward(request, response);
 
-        RequestDispatcher view = request.getRequestDispatcher(LIST);
-        view.forward(request, response);
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         response.setContentType("text/html");
-        response.sendRedirect(LIST);
+            response.sendRedirect(LIST);
     }
 }

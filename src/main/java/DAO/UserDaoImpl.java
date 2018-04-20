@@ -47,6 +47,26 @@ public class UserDaoImpl implements UserDAO{
         return user;
     }
 
+    public String getUserRole(String login){
+        tx = null;
+        User user = null;
+        String s = null;
+        try (Session session = sessionFactory.openSession()) {
+            tx = session.getTransaction();
+            tx.begin();
+            Query query = session.createQuery("from User where login='" + login + "'");
+            user = (User) query.uniqueResult();
+            s = user.getType();
+            tx.commit();
+        } catch (Exception e) {
+            if (tx != null) {
+                tx.rollback();
+            }
+            e.printStackTrace();
+        }
+        return s;
+    }
+
     public List<User> getAll() {
         List<User> list = new ArrayList<>();
         tx = null;
